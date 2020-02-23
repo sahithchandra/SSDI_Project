@@ -21,7 +21,7 @@
         "@angular/router": "~7.2.0",
         "angular-database": "^1.0.1",
         "angular-datatables": "^6.0.1",
-        "bootstrap": "^3.3.7",
+        "bootstrap": "^3.4.1",
         "core-js": "^2.5.4",
         "datatables.net": "^1.10.19",
         "datatables.net-dt": "^1.10.19",
