@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
-import {StudentListComponent} from './features/components/student-list/student-list.component';
+import {StudentListComponent} from './features/student-list.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'view-student', pathMatch: 'full'},
