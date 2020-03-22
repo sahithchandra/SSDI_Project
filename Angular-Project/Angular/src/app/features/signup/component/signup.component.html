@@ -1,0 +1,46 @@
+<!-- Signup Form -->
+<div class="bg-img">
+    <div class="content" [ngStyle]="spinner && {'width':'130px'}">
+
+        <div *ngIf="spinner" class="spinner spinner-circle "></div>
+
+        <ng-container *ngIf="!spinner ">
+            <header>
+                <img src="../../../../assets/images/expense logo.PNG" />
+            </header>
+            <header style='    color: black;
+            font-size: 25px;
+            font-weight: 600;
+            margin: 0 0 15px 0;
+            font-family: "Montserrat", sans-serif;'>
+                Sign Up
+            </header>
+            <form [formGroup]="SignUpFormbuilder" (ngSubmit)="onSubmit()">
+                <div class="field">
+                    <input class="form-control" type="text" required placeholder="Email" formControlName="email">
+                </div>
+                <div class="field space">
+                    <input class="form-control" type="text" class="pass-key" required placeholder="Username" formControlName="username">
+                </div>
+                <div class="field space">
+                    <input class="form-control" #x type="password" class="pass-key" required placeholder="Password" formControlName="password">
+                    <span class="show" (click)="x.type === 'password' ? x.type = 'text' : x.type = 'password'">SHOW</span>
+                </div>
+                <div class="field space">
+                    <input class="form-control" #y type="password" class="pass-key" required placeholder="Password Confirm" formControlName="passwordConfirm">
+                    <span class="show" (click)="y.type === 'password' ? y.type = 'text' : y.type = 'password'">SHOW</span>
+                </div>
+                <div class="field">
+                    <button type="submit" [disabled]="!SignUpFormbuilder.valid">Sign up</button>
+                </div>
+            </form>
+
+            <div class="signup">Already have an account?
+                <a (click)="routeToSignIn()">Sign in</a>
+            </div>
+        </ng-container>
+
+
+    </div>
+</div>
+<!-- /Signup Form -->

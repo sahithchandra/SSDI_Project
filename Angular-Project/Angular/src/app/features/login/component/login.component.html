@@ -1,0 +1,36 @@
+<!-- Login Form -->
+<div class="bg-img">
+    <div class="content" [ngStyle]="spinner && {'width':'130px'}">
+
+        <div *ngIf="spinner " class="spinner spinner-circle "></div>
+
+        <ng-container *ngIf="!spinner">
+            <header>
+                <img src="../../../../assets/images/expense logo.PNG " />
+            </header>
+            <header style=' color: black; font-size: 25px; font-weight: 600; margin: 0 0 15px 0; font-family: "Montserrat ", sans-serif; '>
+                Login
+            </header>
+
+            <form [formGroup]="loginFormbuilder" (ngSubmit)="onSubmit()">
+                <div class="field ">
+                    <span class="fa fa-user "></span>
+                    <input type="text " required placeholder="Email " formControlName="email">
+                </div>
+                <div class="field space ">
+                    <span class="fa fa-lock "></span>
+                    <input #z type="password " class="pass-key " required placeholder="Password " formControlName="password">
+                    <span class="show " (click)="z.type==='password ' ? z.type='text ' : z.type='password'">SHOW</span>
+                </div>
+                <div class="field">
+                    <button type="submit" [disabled]="!loginFormbuilder.valid">LOGIN</button>
+                </div>
+            </form>
+
+            <div class="signup ">Don't have account? <a (click)="routeToSignup() ">Signup Now</a>
+            </div>
+
+        </ng-container>
+
+    </div>
+    <!-- /Login Form -->

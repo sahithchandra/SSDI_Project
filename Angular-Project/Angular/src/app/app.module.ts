@@ -5,12 +5,16 @@ import {AppComponent} from './app.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {DataTablesModule} from 'angular-datatables';
-import {StudentListComponent} from './features/student-list.component';
+import { LoginComponent } from './features/login/component/login.component';
+import { LoginService } from './features/login/service/login.service';
+import { SignUpComponent } from './features/signup/component/signup.component';
+import { SignUpService } from './features/signup/service/signup.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    StudentListComponent,
+    LoginComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +24,7 @@ import {StudentListComponent} from './features/student-list.component';
     HttpClientModule,
     DataTablesModule
   ],
-  providers: [],
+  providers: [LoginService, SignUpService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
